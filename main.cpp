@@ -19,11 +19,18 @@ bool isEven_Odd(int rng) {
 
 
 bool isPrime(int rng) {
-    if (rng <= 1) return false;
     for (int i = 2; i * i <= rng; ++i) {
-        if (rng % i == 0) return false;
+        if (rng % i == 0) {
+            cout << "and is not prime\n"; 
+        } else {
+            printf("and is prime\n");
+        }
     }
     return true;
+}
+
+int isPrime_Even_Odd(int rng){
+    return isEven_Odd(rng) && isPrime(rng);
 }
 
 int main() {
@@ -94,11 +101,12 @@ int main() {
                             if (rand_hint == 0) {
                                 isEven_Odd(RNG);
                             }else if (rand_hint == 1){
-                                isEven_Odd(RNG) && isPrime(RNG);
+                                isPrime_Even_Odd(RNG);
                             } else {
-                                printf("NO hint for you\n");
+                                printf("No hint for you\n");
                                 continue;
                             }
+                            
                         }
                     }
 
